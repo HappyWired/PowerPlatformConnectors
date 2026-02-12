@@ -1,0 +1,1425 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "HappyWired Build-a-Doc",
+    "version": "1.0",
+    "x-ms-api-annotation": {
+      "status": "Production"
+    },
+    "contact": {
+      "name": "HappyWired",
+      "url": "https://www.happywired.com",
+      "email": "support@happywired.com"
+    },
+    "description": "Create, manipulate and convert documents"
+  },
+  "host": "apim-happywired-apigateway-staging.azure-api.net",
+  "basePath": "/buildadoc",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/convertHtmlFunction": {
+      "post": {
+        "operationId": "ConvertHtmlFunction",
+        "summary": "Convert HTML",
+        "description": "Converts HTML to another format",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ConvertHTMLRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Result content",
+            "schema": {
+              "type": "string",
+              "title": "Result content"
+            }
+          }
+        }
+      }
+    },
+    "/GetConvertHtmlOutputFormatOptionsSchema": {
+      "get": {
+        "operationId": "GetConvertHtmlOutputFormatOptionsSchema",
+        "summary": "GetConvertHtmlOutputFormatOptionsSchema",
+        "description": "GetConvertHtmlOutputFormatOptionsSchema",
+        "x-ms-visibility": "internal",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "OutputFormat",
+            "type": "string",
+            "required": true,
+            "x-ms-summary": "Output Format"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/convertWordDocumentFunction": {
+      "post": {
+        "operationId": "ConvertWordDocumentFunction",
+        "summary": "Convert Word Document",
+        "description": "Converts Word document to another format",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ConvertWordDocumentRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "File content",
+            "schema": {
+              "type": "string",
+              "title": "File content",
+              "format": "binary"
+            }
+          }
+        }
+      }
+    },
+    "/GetConvertWordDocOutputFormatOptionsSchema": {
+      "get": {
+        "operationId": "GetConvertWordDocOutputFormatOptionsSchema",
+        "summary": "GetConvertWordDocOutputFormatOptionsSchema",
+        "description": "GetConvertWordDocOutputFormatOptionsSchema",
+        "x-ms-visibility": "internal",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "OutputFormat",
+            "type": "string",
+            "required": true,
+            "x-ms-summary": "Output Format"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/mergeWordDocumentsFunction": {
+      "post": {
+        "operationId": "MergeWordDocumentsFunction",
+        "summary": "Merge Word Documents",
+        "description": "Merge Word documents",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/mergeWordDocumentsRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "File content",
+            "schema": {
+              "type": "string",
+              "title": "File content",
+              "format": "binary"
+            }
+          }
+        }
+      }
+    },
+    "/compareWordDocumentsFunction": {
+      "post": {
+        "operationId": "CompareWordDocumentsFunction",
+        "summary": "Compare Word Documents",
+        "description": "Compare Word documents",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/compareWordDocumentsRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "File content",
+            "schema": {
+              "type": "string",
+              "title": "File content",
+              "format": "binary"
+            }
+          }
+        }
+      }
+    },
+    "/convertExcelDocumentFunction": {
+      "post": {
+        "operationId": "ConvertExcelDocumentFunction",
+        "summary": "Convert Excel Document",
+        "description": "Converts Excel document to another format",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/convertExcelDocumentRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "File content",
+            "schema": {
+              "type": "string",
+              "title": "File content",
+              "format": "binary"
+            }
+          }
+        }
+      }
+    },
+    "/GetConvertExcelOutputFormatOptionsSchema": {
+      "get": {
+        "operationId": "GetConvertExcelOutputFormatOptionsSchema",
+        "summary": "GetConvertExcelOutputFormatOptionsSchema",
+        "description": "GetConvertExcelOutputFormatOptionsSchema",
+        "x-ms-visibility": "internal",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "OutputFormat",
+            "type": "string",
+            "required": true,
+            "x-ms-summary": "Output Format"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/renderExcelChartFunction": {
+      "post": {
+        "operationId": "RenderExcelChartFunction",
+        "summary": "Render Excel Chart",
+        "description": "Render Excel Chart",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/renderExcelChartRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "File content",
+            "schema": {
+              "type": "string",
+              "title": "File content",
+              "format": "binary"
+            }
+          }
+        }
+      }
+    },
+    "/convertPresentationDocumentFunction": {
+      "post": {
+        "operationId": "ConvertPresentationDocumentFunction",
+        "summary": "Convert PowerPoint Document",
+        "description": "Converts PowerPoint document to another format",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/convertPresentationDocumentRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "File content",
+            "schema": {
+              "type": "string",
+              "title": "File content",
+              "format": "binary"
+            }
+          }
+        }
+      }
+    },
+    "/GetConvertPresentationOutputFormatOptionsSchema": {
+      "get": {
+        "operationId": "GetConvertPresentationOutputFormatOptionsSchema",
+        "summary": "GetConvertPresentationOutputFormatOptionsSchema",
+        "description": "GetConvertPresentationOutputFormatOptionsSchema",
+        "x-ms-visibility": "internal",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "OutputFormat",
+            "type": "string",
+            "required": true,
+            "x-ms-summary": "Output Format"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/formatPresentationFunction": {
+      "post": {
+        "operationId": "FormatPresentationFunction",
+        "summary": "Format PowerPoint Document",
+        "description": "Format a PowerPoint presentation",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/formatPresentationRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "File content",
+            "schema": {
+              "type": "string",
+              "title": "File content",
+              "format": "binary"
+            }
+          }
+        }
+      }
+    },
+    "/mergePresentationDocumentsFunction": {
+      "post": {
+        "operationId": "MergePresentationDocumentsFunction",
+        "summary": "Merge PowerPoint Documents",
+        "description": "Merge PowerPoint documents",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/mergePresentationDocumentsRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "File content",
+            "schema": {
+              "type": "string",
+              "title": "File content",
+              "format": "binary"
+            }
+          }
+        }
+      }
+    },
+    "/computeDataFunction": {
+      "post": {
+        "operationId": "ComputeDataFunction",
+        "summary": "Compute data",
+        "description": "Compute data using expression, calculated columns and filtering",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "expression": {
+                  "type": "string",
+                  "x-ms-summary": "Expression",
+                  "description": "For example, Sum(quantity)"
+                },
+                "Data": {
+                  "type": "array",
+                  "x-ms-summary": "Data",
+                  "description": "Array of data",
+                  "items": {
+                    "type": "object"
+                  }
+                },
+                "filter": {
+                  "type": "string",
+                  "x-ms-summary": "Filter"
+                },
+                "CalculatedColumns": {
+                  "type": "array",
+                  "x-ms-summary": "Calculated Columns",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "x-ms-summary": "Name"
+                      },
+                      "type": {
+                        "type": "string",
+                        "x-ms-summary": "Type",
+                        "enum": [
+                          "String",
+                          "Integer",
+                          "Decimal",
+                          "DateTime"
+                        ]
+                      },
+                      "expression": {
+                        "type": "string",
+                        "x-ms-summary": "Expression",
+                        "description": "For example, quantity*price"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Result",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "result": {
+                  "type": "object",
+                  "x-ms-summary": "Result"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/convertPdfDocumentFunction": {
+      "post": {
+        "operationId": "ConvertPdfDocumentFunction",
+        "summary": "Convert PDF Document",
+        "description": "Converts PDF document to another format",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/convertPdfDocumentRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "File content",
+            "schema": {
+              "type": "string",
+              "title": "File content",
+              "format": "binary"
+            }
+          }
+        }
+      }
+    },
+    "/GetConvertPDFOutputFormatOptionsSchema": {
+      "get": {
+        "operationId": "GetConvertPDFOutputFormatOptionsSchema",
+        "summary": "GetConvertPDFOutputFormatOptionsSchema",
+        "description": "GetConvertPDFOutputFormatOptionsSchema",
+        "x-ms-visibility": "internal",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "OutputFormat",
+            "type": "string",
+            "required": true,
+            "x-ms-summary": "Output Format"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/convertVisioDocumentFunction": {
+      "post": {
+        "operationId": "ConvertVisioDocumentFunction",
+        "summary": "Convert Visio Document",
+        "description": "Converts Visio document to another format",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/convertVisioDocumentRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "File content",
+            "schema": {
+              "type": "string",
+              "title": "File content",
+              "format": "binary"
+            }
+          }
+        }
+      }
+    },
+    "/GetConvertVisioOutputFormatOptionsSchema": {
+      "get": {
+        "operationId": "GetConvertVisioOutputFormatOptionsSchema",
+        "summary": "GetConvertVisioOutputFormatOptionsSchema",
+        "description": "GetConvertVisioOutputFormatOptionsSchema",
+        "x-ms-visibility": "internal",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "OutputFormat",
+            "type": "string",
+            "required": true,
+            "x-ms-summary": "Output Format"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/convertOnenoteDocumentFunction": {
+      "post": {
+        "operationId": "ConvertOnenoteDocumentFunction",
+        "summary": "Convert OneNote Document",
+        "description": "Converts OneNote document to another format",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/convertOnenoteDocumentRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "File content",
+            "schema": {
+              "type": "string",
+              "title": "File content",
+              "format": "binary"
+            }
+          }
+        }
+      }
+    },
+    "/GetConvertOnenoteOutputFormatOptionsSchema": {
+      "get": {
+        "operationId": "GetConvertOnenoteOutputFormatOptionsSchema",
+        "summary": "GetConvertOnenoteOutputFormatOptionsSchema",
+        "description": "GetConvertOnenoteOutputFormatOptionsSchema",
+        "x-ms-visibility": "internal",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "OutputFormat",
+            "type": "string",
+            "required": true,
+            "x-ms-summary": "Output Format"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "/updatePDFFunction": {
+      "post": {
+        "operationId": "UpdatePDFFunction",
+        "summary": "Update PDF",
+        "description": "Update PDF field and metadata values",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/UpdatePDFRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "File content",
+            "schema": {
+              "type": "string",
+              "title": "File content",
+              "format": "binary"
+            }
+          }
+        }
+      }
+    },
+    "/extractPDFDataFunction": {
+      "post": {
+        "operationId": "ExtractPDFDataFunction",
+        "summary": "Extract PDF data",
+        "description": "Extract PDF field and metadata values",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/ExtractPDFDataRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "PDF Form data",
+            "schema": {
+              "$ref": "#/definitions/ExtractPDFDataResponse"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "ConvertHTMLRequest": {
+      "type": "object",
+      "properties": {
+        "html": {
+          "type": "string",
+          "x-ms-summary": "HTML"
+        },
+        "outputformat": {
+          "type": "string",
+          "x-ms-summary": "Output Format",
+          "enum": [
+            "PDF",
+            "JPEG",
+            "PNG",
+            "BMP",
+            "GIF",
+            "TIFF",
+            "XPS",
+            "HTML"
+          ]
+        },
+        "outputformatoptions": {
+          "x-ms-summary": null,
+          "type": "object",
+          "x-ms-dynamic-schema": {
+            "operationId": "GetConvertHtmlOutputFormatOptionsSchema",
+            "value-path": "schema",
+            "parameters": {
+              "OutputFormat": {
+                "parameter": "outputformat"
+              }
+            }
+          },
+          "x-ms-dynamic-properties": {
+            "operationId": "GetConvertHtmlOutputFormatOptionsSchema",
+            "parameters": {
+              "OutputFormat": {
+                "parameterReference": "body/outputformat"
+              }
+            },
+            "itemValuePath": "schema"
+          }
+        },
+        "datasources": {
+          "type": "array",
+          "x-ms-summary": "Data source",
+          "x-ms-visibility": "advanced",
+          "items": {
+            "type": "object",
+            "properties": {
+              "Name": {
+                "type": "string"
+              },
+              "Data": {}
+            },
+            "required": [
+              "Name",
+              "Data"
+            ]
+          }
+        }
+      }
+    },
+    "ConvertWordDocumentRequest": {
+      "type": "object",
+      "properties": {
+        "document": {
+          "type": "string",
+          "format": "binary",
+          "x-ms-summary": "Document"
+        },
+        "outputformat": {
+          "type": "string",
+          "x-ms-summary": "Output Format",
+          "enum": [
+            "Doc",
+            "Docx",
+            "PDF",
+            "Html",
+            "HtmlFixed",
+            "SVG",
+            "JPEG",
+            "PNG",
+            "BMP",
+            "GIF",
+            "TIFF"
+          ]
+        },
+        "outputformatoptions": {
+          "x-ms-summary": null,
+          "type": "object",
+          "x-ms-visibility": "advanced",
+          "x-ms-dynamic-schema": {
+            "operationId": "GetConvertWordDocOutputFormatOptionsSchema",
+            "value-path": "schema",
+            "parameters": {
+              "OutputFormat": {
+                "parameter": "outputformat"
+              }
+            }
+          },
+          "x-ms-dynamic-properties": {
+            "operationId": "GetConvertWordDocOutputFormatOptionsSchema",
+            "parameters": {
+              "OutputFormat": {
+                "parameterReference": "body/outputformat"
+              }
+            },
+            "itemValuePath": "schema"
+          }
+        },
+        "mailmerge": {
+          "type": "boolean",
+          "default": false,
+          "x-ms-visibility": "advanced",
+          "x-ms-summary": "Mail Merge first data source"
+        },
+        "inlinetemplatesyntaxerrors": {
+          "type": "boolean",
+          "default": false,
+          "x-ms-visibility": "advanced",
+          "x-ms-summary": "Inline template syntax errors"
+        },
+        "allowmissingdatasourcemembers": {
+          "type": "boolean",
+          "default": false,
+          "x-ms-visibility": "advanced",
+          "description": "For data sources (e.g. SharePoint) that may not return all properties for items",
+          "x-ms-summary": "Allow missing data source members"
+        },
+        "datasources": {
+          "type": "array",
+          "x-ms-summary": "Data source",
+          "x-ms-visibility": "advanced",
+          "items": {
+            "type": "object",
+            "properties": {
+              "Name": {
+                "type": "string"
+              },
+              "Data": {},
+              "Format": {
+                "type": "string",
+                "default": "JSON",
+                "enum": [
+                  "JSON",
+                  "XML",
+                  "CSV"
+                ]
+              }
+            },
+            "required": [
+              "Name",
+              "Data"
+            ]
+          }
+        }
+      }
+    },
+    "mergeWordDocumentsRequest": {
+      "type": "object",
+      "properties": {
+        "sourcedocument": {
+          "type": "string",
+          "format": "binary",
+          "x-ms-summary": "Source Document"
+        },
+        "destinationdocument": {
+          "type": "string",
+          "format": "binary",
+          "x-ms-summary": "Destination Document"
+        },
+        "mergemethod": {
+          "type": "string",
+          "x-ms-summary": "Method",
+          "enum": [
+            "Append",
+            "ReplaceBookmark",
+            "ReplaceText"
+          ]
+        },
+        "mergemethodlocation": {
+          "type": "string",
+          "x-ms-summary": "Merge location",
+          "description": "Bookmark name or text to replace"
+        }
+      }
+    },
+    "compareWordDocumentsRequest": {
+      "type": "object",
+      "properties": {
+        "firstdocument": {
+          "type": "string",
+          "format": "binary",
+          "x-ms-summary": "First Document"
+        },
+        "seconddocument": {
+          "type": "string",
+          "format": "binary",
+          "x-ms-summary": "Second Document"
+        },
+        "revisionsauthor": {
+          "type": "string",
+          "x-ms-visibility": "advanced",
+          "x-ms-summary": "Revisions Author"
+        },
+        "revisionsdatetime": {
+          "type": "string",
+          "x-ms-visibility": "advanced",
+          "x-ms-summary": "Revisions Datetime"
+        },
+        "ignorecasechanges": {
+          "type": "boolean",
+          "default": false,
+          "x-ms-visibility": "advanced",
+          "x-ms-summary": "Ignore case changes"
+        },
+        "ignorefields": {
+          "type": "boolean",
+          "default": false,
+          "x-ms-visibility": "advanced",
+          "x-ms-summary": "Ignore fields"
+        },
+        "ignoreformatting": {
+          "type": "boolean",
+          "default": false,
+          "x-ms-visibility": "advanced",
+          "x-ms-summary": "Ignore formatting"
+        },
+        "ignoretables": {
+          "type": "boolean",
+          "default": false,
+          "x-ms-visibility": "advanced",
+          "x-ms-summary": "Ignore tables"
+        },
+        "ignorecomments": {
+          "type": "boolean",
+          "default": false,
+          "x-ms-visibility": "advanced",
+          "x-ms-summary": "Ignore comments"
+        },
+        "ignoretextboxes": {
+          "type": "boolean",
+          "default": false,
+          "x-ms-visibility": "advanced",
+          "x-ms-summary": "Ignore textboxes"
+        },
+        "ignorefootnotes": {
+          "type": "boolean",
+          "default": false,
+          "x-ms-visibility": "advanced",
+          "x-ms-summary": "Ignore Footnotes"
+        },
+        "ignoreheadersandfooters": {
+          "type": "boolean",
+          "default": false,
+          "x-ms-visibility": "advanced",
+          "x-ms-summary": "Ignore headers and footers"
+        }
+      }
+    },
+    "convertExcelDocumentRequest": {
+      "type": "object",
+      "properties": {
+        "document": {
+          "type": "string",
+          "format": "binary",
+          "x-ms-summary": "Document"
+        },
+        "includeworksheetnames": {
+          "type": "string",
+          "x-ms-summary": "Include Worksheets",
+          "description": "Names of the worksheets to include, separated with ';'"
+        },
+        "outputformat": {
+          "type": "string",
+          "x-ms-summary": "Output Format",
+          "enum": [
+            "CSV",
+            "TSV",
+            "TabDelimited",
+            "Html",
+            "MHtml",
+            "Pdf",
+            "TIFF",
+            "SVG",
+            "Xlsx"
+          ]
+        },
+        "outputformatoptions": {
+          "x-ms-summary": null,
+          "type": "object",
+          "x-ms-dynamic-schema": {
+            "operationId": "GetConvertExcelOutputFormatOptionsSchema",
+            "value-path": "schema",
+            "parameters": {
+              "OutputFormat": {
+                "parameter": "outputformat"
+              }
+            }
+          },
+          "x-ms-dynamic-properties": {
+            "operationId": "GetConvertExcelOutputFormatOptionsSchema",
+            "parameters": {
+              "OutputFormat": {
+                "parameterReference": "body/outputformat"
+              }
+            },
+            "itemValuePath": "schema"
+          }
+        },
+        "inlinetemplatesyntaxerrors": {
+          "type": "boolean",
+          "default": false,
+          "x-ms-visibility": "advanced",
+          "x-ms-summary": "Inline template syntax errors"
+        },
+        "allowmissingdatasourcemembers": {
+          "type": "boolean",
+          "default": false,
+          "x-ms-visibility": "advanced",
+          "description": "For data sources (e.g. SharePoint) that may not return all properties for items",
+          "x-ms-summary": "Allow missing data source members"
+        },
+        "datasources": {
+          "type": "array",
+          "x-ms-summary": "Data source",
+          "x-ms-visibility": "advanced",
+          "items": {
+            "type": "object",
+            "properties": {
+              "Name": {
+                "type": "string"
+              },
+              "Data": {},
+              "Format": {
+                "type": "string",
+                "default": "JSON",
+                "enum": [
+                  "JSON",
+                  "XML",
+                  "CSV"
+                ]
+              }
+            },
+            "required": [
+              "Name",
+              "Data"
+            ]
+          }
+        }
+      }
+    },
+    "renderExcelChartRequest": {
+      "type": "object",
+      "properties": {
+        "document": {
+          "type": "string",
+          "format": "binary",
+          "x-ms-summary": "Document"
+        },
+        "outputformat": {
+          "type": "string",
+          "x-ms-summary": "Output Format",
+          "enum": [
+            "PNG",
+            "PDF"
+          ]
+        },
+        "worksheetname": {
+          "type": "string",
+          "x-ms-summary": "Worksheet Name"
+        },
+        "chartname": {
+          "type": "string",
+          "x-ms-summary": "Chart Name"
+        },
+        "horizontalresolution": {
+          "type": "integer",
+          "x-ms-summary": "Horizontal Resolution",
+          "default": 300
+        },
+        "verticalresolution": {
+          "type": "integer",
+          "x-ms-summary": "Vertical Resolution",
+          "default": 300
+        }
+      }
+    },
+    "convertPresentationDocumentRequest": {
+      "type": "object",
+      "properties": {
+        "document": {
+          "type": "string",
+          "format": "binary",
+          "x-ms-summary": "Document"
+        },
+        "slides": {
+          "type": "string",
+          "x-ms-summary": "Include slides",
+          "description": "Comma separated list e.g. 1,2,3,4"
+        },
+        "outputformat": {
+          "type": "string",
+          "x-ms-summary": "Output Format",
+          "enum": [
+            "PPT",
+            "PDF",
+            "XPS",
+            "PPTX",
+            "PPSX",
+            "TIFF",
+            "PPTM",
+            "PPSM",
+            "POTX",
+            "POTM",
+            "HTML",
+            "SWF"
+          ]
+        },
+        "outputformatoptions": {
+          "x-ms-summary": null,
+          "type": "object",
+          "x-ms-dynamic-schema": {
+            "operationId": "GetConvertPresentationOutputFormatOptionsSchema",
+            "value-path": "schema",
+            "parameters": {
+              "OutputFormat": {
+                "parameter": "outputformat"
+              }
+            }
+          },
+          "x-ms-dynamic-properties": {
+            "operationId": "GetConvertPresentationOutputFormatOptionsSchema",
+            "parameters": {
+              "OutputFormat": {
+                "parameterReference": "body/outputformat"
+              }
+            },
+            "itemValuePath": "schema"
+          }
+        }
+      }
+    },
+    "formatPresentationRequest": {
+      "type": "object",
+      "properties": {
+        "document": {
+          "type": "string",
+          "format": "binary",
+          "x-ms-summary": "Document"
+        },
+        "ColourScheme": {
+          "type": "object",
+          "x-ms-summary": "Colour Scheme",
+          "properties": {
+            "Dark1": {
+              "type": "string",
+              "description": "HEX colour value"
+            },
+            "Dark2": {
+              "type": "string",
+              "description": "HEX colour value"
+            },
+            "Accent1": {
+              "type": "string",
+              "description": "HEX colour value"
+            },
+            "Accent2": {
+              "type": "string",
+              "description": "HEX colour value"
+            },
+            "Accent3": {
+              "type": "string",
+              "description": "HEX colour value"
+            },
+            "Accent4": {
+              "type": "string",
+              "description": "HEX colour value"
+            },
+            "Accent5": {
+              "type": "string",
+              "description": "HEX colour value"
+            },
+            "Accent6": {
+              "type": "string",
+              "description": "HEX colour value"
+            },
+            "Light1": {
+              "type": "string",
+              "description": "HEX colour value"
+            },
+            "Light2": {
+              "type": "string",
+              "description": "HEX colour value"
+            },
+            "Hyperlink": {
+              "type": "string",
+              "description": "HEX colour value"
+            },
+            "FollowedHyperlink": {
+              "type": "string",
+              "description": "HEX colour value"
+            }
+          }
+        }
+      }
+    },
+    "mergePresentationDocumentsRequest": {
+      "type": "object",
+      "properties": {
+        "sourcedocument": {
+          "type": "string",
+          "format": "binary",
+          "x-ms-summary": "Source Document"
+        },
+        "destinationdocument": {
+          "type": "string",
+          "format": "binary",
+          "x-ms-summary": "Destination Document"
+        },
+        "mergemethod": {
+          "type": "string",
+          "x-ms-summary": "Method",
+          "enum": [
+            "Append",
+            "SlidePosition"
+          ]
+        },
+        "mergemethodlocation": {
+          "type": "string",
+          "x-ms-summary": "Merge location",
+          "description": "If method is Position, provide slide position"
+        }
+      }
+    },
+    "convertPdfDocumentRequest": {
+      "type": "object",
+      "properties": {
+        "document": {
+          "type": "string",
+          "format": "binary",
+          "x-ms-summary": "Document"
+        },
+        "outputformat": {
+          "type": "string",
+          "x-ms-summary": "Output Format",
+          "enum": [
+            "Doc",
+            "DocX",
+            "PPTX",
+            "HTML",
+            "SVG"
+          ]
+        },
+        "outputformatoptions": {
+          "x-ms-summary": null,
+          "type": "object",
+          "x-ms-dynamic-schema": {
+            "operationId": "GetConvertPDFOutputFormatOptionsSchema",
+            "value-path": "schema",
+            "parameters": {
+              "OutputFormat": {
+                "parameter": "outputformat"
+              }
+            }
+          },
+          "x-ms-dynamic-properties": {
+            "operationId": "GetConvertPDFOutputFormatOptionsSchema",
+            "parameters": {
+              "OutputFormat": {
+                "parameterReference": "body/outputformat"
+              }
+            },
+            "itemValuePath": "schema"
+          }
+        }
+      }
+    },
+    "convertVisioDocumentRequest": {
+      "type": "object",
+      "properties": {
+        "document": {
+          "type": "string",
+          "format": "binary",
+          "x-ms-summary": "Document"
+        },
+        "outputformat": {
+          "type": "string",
+          "x-ms-summary": "Output Format",
+          "enum": [
+            "PDF",
+            "SVG",
+            "VSDX",
+            "BMP",
+            "TIFF",
+            "PNG",
+            "EMF",
+            "JPEG",
+            "HTML"
+          ]
+        },
+        "outputformatoptions": {
+          "x-ms-summary": null,
+          "type": "object",
+          "x-ms-dynamic-schema": {
+            "operationId": "GetConvertVisioOutputFormatOptionsSchema",
+            "value-path": "schema",
+            "parameters": {
+              "OutputFormat": {
+                "parameter": "outputformat"
+              }
+            }
+          },
+          "x-ms-dynamic-properties": {
+            "operationId": "GetConvertVisioOutputFormatOptionsSchema",
+            "parameters": {
+              "OutputFormat": {
+                "parameterReference": "body/outputformat"
+              }
+            },
+            "itemValuePath": "schema"
+          }
+        }
+      }
+    },
+    "convertOnenoteDocumentRequest": {
+      "type": "object",
+      "properties": {
+        "document": {
+          "type": "string",
+          "format": "binary",
+          "x-ms-summary": "Document"
+        },
+        "outputformat": {
+          "type": "string",
+          "x-ms-summary": "Output Format",
+          "enum": [
+            "PDF",
+            "HTML",
+            "JPEG",
+            "PNG",
+            "BMP",
+            "GIF",
+            "TIFF"
+          ]
+        },
+        "outputformatoptions": {
+          "x-ms-summary": null,
+          "type": "object",
+          "x-ms-dynamic-schema": {
+            "operationId": "GetConvertOnenoteOutputFormatOptionsSchema",
+            "value-path": "schema",
+            "parameters": {
+              "OutputFormat": {
+                "parameter": "outputformat"
+              }
+            }
+          },
+          "x-ms-dynamic-properties": {
+            "operationId": "GetConvertOnenoteOutputFormatOptionsSchema",
+            "parameters": {
+              "OutputFormat": {
+                "parameterReference": "body/outputformat"
+              }
+            },
+            "itemValuePath": "schema"
+          }
+        }
+      }
+    },
+    "UpdatePDFRequest": {
+      "type": "object",
+      "properties": {
+        "document": {
+          "type": "string",
+          "format": "binary",
+          "x-ms-summary": "Document"
+        },
+        "fields": {
+          "type": "array",
+          "x-ms-summary": "Fields",
+          "items": {
+            "type": "object",
+            "properties": {
+              "Name": {
+                "type": "string"
+              },
+              "Value": {}
+            },
+            "required": [
+              "Name"
+            ]
+          }
+        },
+        "metadata": {
+          "type": "array",
+          "x-ms-summary": "Metadata",
+          "items": {
+            "type": "object",
+            "properties": {
+              "Name": {
+                "type": "string"
+              },
+              "Value": {
+                "type": "string",
+                "x-ms-summary": "Value"
+              }
+            },
+            "required": [
+              "Name"
+            ]
+          }
+        },
+        "submitbuttonname": {
+          "type": "string",
+          "x-ms-summary": "Submit button name"
+        },
+        "submiturl": {
+          "type": "string",
+          "x-ms-summary": "Submit URL"
+        },
+        "allowmissingfields": {
+          "type": "boolean",
+          "x-ms-summary": "Allow missing fields",
+          "default": false
+        }
+      }
+    },
+    "ExtractPDFDataRequest": {
+      "type": "object",
+      "properties": {
+        "document": {
+          "type": "string",
+          "format": "binary",
+          "x-ms-summary": "Document"
+        }
+      }
+    },
+    "ExtractPDFDataResponse": {
+      "type": "object",
+      "properties": {
+        "fields": {
+          "type": "object",
+          "x-ms-summary": "Fields"
+        },
+        "metadata": {
+          "type": "object",
+          "x-ms-summary": "Metadata"
+        }
+      }
+    }
+  },
+  "parameters": {},
+  "responses": {},
+  "securityDefinitions": {
+    "api_key": {
+      "type": "apiKey",
+      "in": "header",
+      "name": "Api-Key"
+    }
+  },
+  "security": [
+    {
+      "api_key": []
+    }
+  ],
+  "tags": [],
+  "x-ms-connector-metadata": [
+    {
+      "propertyName": "Website",
+      "propertyValue": "$"
+    },
+    {
+      "propertyName": "Privacy policy",
+      "propertyValue": ""
+    },
+    {
+      "propertyName": "Categories",
+      "propertyValue": ""
+    }
+  ]
+}
